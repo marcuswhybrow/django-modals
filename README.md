@@ -10,7 +10,9 @@ That all sounds easy enough the first time. But then you add another form to the
 Django Modal's `ModalMixin` tidies up that messy code, and allows you to neatly define subclasses of `Modal`, instances of which are included in the template context. A `Modal` subclass defines a template to use for rendering the modal in HTML, only handles data from a specific modal form, and defines methods for valid and invalid form data handling:
 
 ```
-class MyThingModal(Modal):
+import modals
+
+class MyThingModal(modals.Modal):
     form_class = MyThingForm
     template_name = 'app/my_thing_modal.html'
 
